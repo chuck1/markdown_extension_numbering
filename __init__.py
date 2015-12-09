@@ -127,10 +127,10 @@ class MyBlockParser(BlockProcessor):
 		return False
 
 class MyExtension(Extension):
-	def __init__(self, num_root):
-		self.num_root = num_root
-		print 'num_root', num_root
+    def __init__(self, num_root):
+	self.num_root = num_root
+	print 'num_root', num_root
 		
-	def extendMarkdown(self, md, md_globals):
-		md.parser.blockprocessors['hashheader'] = MyHashHeaderProcessor(md.parser, self.num_root)
+    def extendMarkdown(self, md, md_globals):
+	md.parser.blockprocessors['hashheader'] = MyHashHeaderProcessor(md.parser, self.num_root)
 
