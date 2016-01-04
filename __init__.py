@@ -10,13 +10,13 @@ class MyHashHeaderProcessor(BlockProcessor):
 	RE = re.compile(r'(^|\n)(?P<level>#{1,6})(?P<header>.*?)#*(\n|$)')
 
 	def __init__(self, parser, num_root):
-		#super(MyBlockParser, self).__init__(parser)
-		BlockProcessor.__init__(self, parser)
-		self.num_current = num_root
-		self.num_root_depth = len(num_root)
+	    #super(MyBlockParser, self).__init__(parser)
+	    BlockProcessor.__init__(self, parser)
+	    self.num_current = num_root
+	    self.num_root_depth = len(num_root)
 
 	def test(self, parent, block):
-		return bool(self.RE.search(block))
+	    return bool(self.RE.search(block))
 
 	def update_num_current(self, depth):
 		
